@@ -10,9 +10,12 @@ int main()
 
 	io::CSVReader<2> in(path);
 	in.read_header(io::ignore_extra_column, "sqmt", "price");
+	std::vector<int> sqmts, prices;
 	int sqmt, price;
 	while (in.read_row(sqmt, price)) {
 		std::cout << "sqmt: " << sqmt << " price: " << price << "\n";
+		sqmts.emplace_back(sqmt);
+		prices.emplace_back(price);
 	}
 
 	return 0;
