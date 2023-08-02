@@ -13,6 +13,7 @@ project ("MANNI")
 
 # Add source to this project's executable.
 add_executable (MANNI "MANNI.cpp" "MANNI.h")
+
 include_directories("${PROJECT_SOURCE_DIR}/lib/fast-csv")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
