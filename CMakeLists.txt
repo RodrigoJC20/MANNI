@@ -12,7 +12,8 @@ endif()
 project ("MANNI")
 
 # Add source to this project's executable.
-add_executable (MANNI "MANNI.cpp" "MANNI.h"  "lib/csv_parser/csv_parser.h")
+add_executable (MANNI "MANNI.cpp" "MANNI.h")
+include_directories("${PROJECT_SOURCE_DIR}/lib/fast-csv")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET MANNI PROPERTY CXX_STANDARD 20)
