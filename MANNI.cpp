@@ -2,6 +2,7 @@
 //
 
 #include "MANNI.h"
+#include "linear-regression/linear-regression.h"
 
 int main()
 {
@@ -9,13 +10,32 @@ int main()
 	std::string path = "../../../" + filename;
 
 	io::CSVReader<2> in(path);
-	in.read_header(io::ignore_extra_column, "sqmt", "price");
-	std::vector<int> sqmts, prices;
-	int sqmt, price;
-	while (in.read_row(sqmt, price)) {
-		std::cout << "sqmt: " << sqmt << " price: " << price << "\n";
-		sqmts.emplace_back(sqmt);
-		prices.emplace_back(price);
+	in.read_header(io::ignore_extra_column, "sqft", "price");
+
+	std::vector<double> x, y;
+	double sqft, price;
+
+	std::cout << "Real prices:" << std::endl;
+
+	while (in.read_row(sqft, price)) {
+		std::cout << "sqft: " << sqft << " price: " << price << "\n";
+		x.emplace_back(sqft);
+		y.emplace_back(price);
+	}
+
+	double bias = 100;
+	std::vector<double> w = { 200 };
+
+	LinearRegression::Model LinearModel;
+
+	LinearModel.set_model_parameters(w, bias);
+
+	std::vector<double> results = LinearModel.compute_output(x);
+
+	std::cout << "\nModel Predictions" << std::endl;
+
+	for (int i = 0; i<results.size(); i++) {
+		std::cout << "sqft: " << x[i] << " price: " << results[i] << "\n";
 	}
 
 	return 0;
