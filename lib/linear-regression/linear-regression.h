@@ -16,10 +16,10 @@ namespace LinearRegression {
 		* @return Results of y-hat predictions as a vector of doubles
 		* f(x) = w*x + b
 		*/
-		std::vector<double> compute_output(std::vector<double> x) {
+		std::vector<long double> compute_output(std::vector<long double> x) {
 			int m = x.size();
 
-			std::vector<double> f_predictions(m, 0);
+			std::vector<long double> f_predictions(m, 0);
 
 			for (int i = 0; i < m; i++) {
 				f_predictions[i] = w[0] * x[i] + b;
@@ -34,7 +34,7 @@ namespace LinearRegression {
 		* @param w -: The model parameters (weights) as a vector of doubles
 		* @param b -: The bias term (intercept) of the model
 		*/
-		void set_model_parameters(std::vector<double>& model_params, double& b) {
+		void set_model_parameters(std::vector<long double>& model_params, long double& b) {
 			this->w = model_params;
 			this->b = b;
 		}
