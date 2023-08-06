@@ -12,7 +12,7 @@ int main()
 	io::CSVReader<2> in(path);
 	in.read_header(io::ignore_extra_column, "sqft", "price");
 
-	std::vector<long double> x, y;
+	std::vector<double> x, y;
 	double sqft, price;
 
 	std::cout << "Real prices:" << std::endl;
@@ -23,14 +23,14 @@ int main()
 		y.emplace_back(price);
 	}
 
-	long double bias = 100;
-	std::vector<long double> w = { 200 };
+	double bias = 100;
+	std::vector<double> w = { 200 };
 
 	LinearRegression::Model LinearModel;
 
 	LinearModel.set_model_parameters(w, bias);
 
-	std::vector<long double> results = LinearModel.compute_output(x);
+	std::vector<double> results = LinearModel.compute_output(x);
 
 	std::cout << "\nModel Predictions" << std::endl;
 
