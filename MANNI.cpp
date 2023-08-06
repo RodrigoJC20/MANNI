@@ -15,28 +15,36 @@ int main()
 	std::vector<double> x, y;
 	double sqft, price;
 
-	std::cout << "Real prices:" << std::endl;
+	std::cout << "Actual:" << std::endl;
 
 	while (in.read_row(sqft, price)) {
 		std::cout << "sqft: " << sqft << " price: " << price << "\n";
 		x.emplace_back(sqft);
 		y.emplace_back(price);
 	}
+	std::cout << "\n";
 
-	double bias = 100;
-	std::vector<double> w = { 200 };
+	double bias = 0;
+	std::vector<double> w = { 0 };
+	double alpha = 1e-2;
 
 	LinearRegression::Model LinearModel;
 
-	LinearModel.set_model_parameters(w, bias);
+	LinearModel.init_model_parameters(w, bias, alpha);
 
-	std::vector<double> results = LinearModel.compute_output(x);
+	std::pair<double, double> final_w_b = LinearModel.gradient_descent(x, y, 10000);
+
+	std::cout << "Final Model parameters w: " << final_w_b.first << " and b: " << final_w_b.second << "\n";
+
+	std::vector<double> x_predictions = { 1, 1.5, 2, 2.5 };
+	
+	std::vector<double> results = LinearModel.compute_output(x_predictions);
 
 	std::cout << "\nModel Predictions" << std::endl;
 
-	for (int i = 0; i<results.size(); i++) {
-		std::cout << "sqft: " << x[i] << " price: " << results[i] << "\n";
+	for (size_t i = 0; i<results.size(); i++) {
+		std::cout << "sqft: " << x_predictions[i] << " price: " << results[i] << "\n";
 	}
-
+	
 	return 0;
 }
