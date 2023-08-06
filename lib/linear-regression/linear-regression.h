@@ -16,7 +16,7 @@ namespace LinearRegression {
 		* @return Results of y-hat predictions as a vector of doubles
 		* f(x) = w*x + b
 		*/
-		std::vector<long double> compute_output(std::vector<long double> x) {
+		std::vector<long double> compute_output(std::vector<long double>& x) {
 			int m = x.size();
 
 			std::vector<long double> f_predictions(m, 0);
