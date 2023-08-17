@@ -3,6 +3,7 @@
 
 #include "MANNI.h"
 #include "linear-regression/linear-regression.h"
+#include "armadillo"
 
 int main()
 {
