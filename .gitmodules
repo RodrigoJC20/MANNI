@@ -1,3 +1,3 @@
-[submodule "lib/fast-csv"]
-	path = lib/fast-csv
+[submodule "include/fast-csv"]
+	path = include/fast-csv
 	url = https://github.com/ben-strasser/fast-cpp-csv-parser
