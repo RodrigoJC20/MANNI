@@ -30,21 +30,26 @@ namespace LinearRegression {
 		*
 		* @return Results of the prediction
 		*/
-		double predict_single_output(arma::vec x) { 
-			return arma::dot(x, this->weights) + this->bias;
+		double predict_single_output(const arma::vec& x) { 
+			return arma::dot(x, weights) + bias;
 		}
 
-		double compte_cost(arma::mat x, arma::vec y) {
-			double cost = 0;
-			int rowIndex = 0;
-			x.each_row([&](const arma::rowvec& row) {
-				double cost_per_row = arma::dot(row.as_col(), this->weights) + this->bias;
-				cost_per_row = (cost_per_row - y[rowIndex]) * (cost_per_row - y[rowIndex]);
-				cost += cost_per_row;
-				rowIndex++;
-			});
+		double predict_single_output(const arma::rowvec& x) {
+			return arma::dot(x, weights) + bias;
+		}
 
-			return cost / (2 * y.n_cols);
+		double compte_cost(const arma::mat& x, const arma::vec& y) {
+			int m = x.n_rows; 
+			double cost = 0;
+
+			for (int i = 0; i < m; i++) {
+				arma::rowvec row = x.row(i);
+				double prediction = arma::dot(row, weights) + bias;
+				double error = prediction - y[i];
+				cost += error * error;
+			}
+
+			return cost / (2 * m);
 		}
 
 		/*

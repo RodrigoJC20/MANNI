@@ -27,6 +27,7 @@ int main()
 	arma::vec w_init = { 0.39133535, 18.75376741, -53.36032453, -26.42131618 };
 
 	w_init.print("w_init: ");
+	std::cout << std::setprecision(12);
 	std::cout << "b_init: " << b_init << std::endl;
 	std::cout << "alpha: " << learning_rate << std::endl;
 
@@ -35,6 +36,12 @@ int main()
 	double cost = LinearModel.compte_cost(x_train, y_train);
 
 	std::cout << "Cost: " << cost << std::endl;
+
+	arma::rowvec x_vec = x_train.row(0);
+
+	double prediction = LinearModel.predict_single_output(x_vec);
+
+	std::cout << prediction << std::endl;
 
 	return 0;
 }
