@@ -52,6 +52,26 @@ namespace LinearRegression {
 			return cost / (2 * m);
 		}
 
+		std::pair<arma::vec, double> compute_gradient(const arma::mat& x, const arma::vec& y) {
+			int m = x.n_rows; 
+			arma::vec dcost_w (x.n_rows, arma::fill::zeros);
+			double dcost_b = 0;	
+			int n = x.n_cols;
+
+			for (int i = 0; i < m; i++) {
+				double error = (arma::dot(x.row(i), weights) + bias) - y[i];
+				for (int j = 0; j < n; j++) {
+					dcost_w[j] = dcost_w[j] + error * x(i, j);
+				}
+				dcost_b = dcost_b + error;
+			}
+
+			dcost_w /= m;
+			dcost_b /= m;
+
+			return { dcost_w, dcost_b };
+		}
+
 		arma::vec get_weights() {
 			return weights;
 		}
@@ -136,7 +156,7 @@ namespace LinearRegression {
 		* @param b -: The bias term (intercept) of the model
 		* @para alpha -: Learning rate alpha
 		*/
-		void init_model_parameters(const arma::vec& w, const double b, const double& alpha) {
+		void init_model_parameters(const arma::vec& w, const double& b, const double& alpha) {
 			this->weights = w;
 			this->bias = b;
 			this->alpha = alpha;
