@@ -14,10 +14,20 @@ project ("MANNI")
 # Add source to this project's executable.
 add_executable (MANNI "MANNI.cpp" "MANNI.h")
 
+# Set OpenBLAS_DIR
+set(OpenBLAS_DIR "C:/dev/OpenBLAS")
+
+# Find and link OpenBLAS
+find_package(OpenBLAS REQUIRED)
+include_directories(${OpenBLAS_INCLUDE_DIRS})
+
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET MANNI PROPERTY CXX_STANDARD 20)
 endif()
+
+# Link OpenBLAS after adding executable
+target_link_libraries(MANNI PRIVATE ${OpenBLAS_LIB})
 
 # TODO: Add tests and install targets if needed.
