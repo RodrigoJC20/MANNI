@@ -48,7 +48,7 @@
 #endif
 
 #if !defined(ARMA_USE_NEWARP)
-#define ARMA_USE_NEWARP
+//define ARMA_USE_NEWARP
 //// Uncomment the above line to enable the built-in partial emulation of ARPACK.
 //// This is used for eigen decompositions of real (non-complex) sparse matrices, eg. eigs_sym(), svds() 
 #endif

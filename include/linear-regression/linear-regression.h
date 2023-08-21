@@ -39,9 +39,9 @@ namespace LinearRegression {
 			int rowIndex = 0;
 			x.each_row([&](const arma::rowvec& row) {
 				double cost_per_row = arma::dot(row.as_col(), this->weights) + this->bias;
-				//cost_per_row = (cost_per_row - y[rowIndex]) * (cost_per_row - y[rowIndex]);
-				//cost += cost_per_row;
-				//rowIndex++;
+				cost_per_row = (cost_per_row - y[rowIndex]) * (cost_per_row - y[rowIndex]);
+				cost += cost_per_row;
+				rowIndex++;
 			});
 
 			return cost / (2 * y.n_cols);
