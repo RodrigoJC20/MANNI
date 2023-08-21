@@ -18,7 +18,7 @@ add_executable (MANNI "MANNI.cpp" "MANNI.h")
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 # Link with OpenBLAS library
-target_link_libraries(MANNI PRIVATE "C:/dev/OpenBLAS/lib/libopenblas.dll.a")
+target_link_libraries(MANNI PRIVATE "${PROJECT_SOURCE_DIR}/lib/OpenBLAS/lib/libopenblas.dll.a")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET MANNI PROPERTY CXX_STANDARD 20)

@@ -52,26 +52,13 @@ namespace LinearRegression {
 			return cost / (2 * m);
 		}
 
-		/*
-		* @brief Compute the cost (loss)
-		* 
-		* @param x -: Data, m examples as a vector of doubles
-		* @param y -: Target values as a vector of doubles
-		* 
-		* @return The cost of the model as a double
-		*/
-		/*double compute_cost(const std::vector<double>& x, const std::vector<double>& y) {
-			size_t m = y.size();
+		arma::vec get_weights() {
+			return weights;
+		}
 
-			double acum = 0;
-			for (size_t i = 0; i < m; ++i) {
-				double line = w[0] * x[i] + b;
-				double diff = (line - y[i]) * (line - y[i]);
-				acum += diff;
-			}
-
-			return acum / (2 * m);
-		}*/
+		double get_bias() {
+			return bias;
+		}
 
 		/*
 		* @brief Computes the gradient for linear regression

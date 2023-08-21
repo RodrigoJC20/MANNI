@@ -10,6 +10,8 @@ int main()
 
 	arma::mat input;
 
+	std::cout << std::setprecision(12);
+
 	input.load(file_path);
 	input.print("Input Dataset: ");
 
@@ -21,13 +23,14 @@ int main()
 
 	//arma::vec w_init = arma::randu(x_train.n_cols, arma::distr_param(0, 200));
 	//double b_init = arma::randu(arma::distr_param(0, 200));
+
 	double learning_rate = 1e-2;
 
 	double b_init = 785.1811367994083;
 	arma::vec w_init = { 0.39133535, 18.75376741, -53.36032453, -26.42131618 };
 
 	w_init.print("w_init: ");
-	std::cout << std::setprecision(12);
+	
 	std::cout << "b_init: " << b_init << std::endl;
 	std::cout << "alpha: " << learning_rate << std::endl;
 

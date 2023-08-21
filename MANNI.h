@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include "linear-regression/linear-regression.h"
-#include "armadillo"
+
+#define ARMA_DONT_USE_WRAPPER
+#include <armadillo>
 
 // TODO: Reference additional headers your program requires here.
