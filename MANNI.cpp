@@ -10,41 +10,55 @@ int main()
 
 	arma::mat input;
 
-	std::cout << std::setprecision(12);
-
 	input.load(file_path);
-	input.print("Input Dataset: ");
 
 	arma::vec y_train = input.col(input.n_cols - 1);
 	arma::mat x_train = input.head_cols(input.n_cols - 1);
 
-	y_train.print("y_train: ");
-	x_train.print("x_train: ");
+	//arma::vec w_init(x_train.n_cols, arma::fill::zeros);
+	//double b_init = 0;
 
-	//arma::vec w_init = arma::randu(x_train.n_cols, arma::distr_param(0, 200));
-	//double b_init = arma::randu(arma::distr_param(0, 200));
+	double b_init = 0;
+	arma::vec w_init = arma::zeros(x_train.n_cols);
+	double learning_rate = 5.0e-7;
+	int iterations = 1000;
 
-	double learning_rate = 1e-2;
-
-	double b_init = 785.1811367994083;
-	arma::vec w_init = { 0.39133535, 18.75376741, -53.36032453, -26.42131618 };
-
-	w_init.print("w_init: ");
-	
-	std::cout << "b_init: " << b_init << std::endl;
-	std::cout << "alpha: " << learning_rate << std::endl;
+	std::cout << std::setprecision(6);
 
 	LinearRegression::Model LinearModel (w_init, b_init, learning_rate);
 
-	double cost = LinearModel.compte_cost(x_train, y_train);
+	LinearModel.print_model_params("Initial w and b: ");
+	std::cout << "Learning rate: " << learning_rate << std::endl;
+	std::cout << "Iterations: " << iterations << std::endl;
+	
+	std::pair<arma::vec, double> result = LinearModel.gradient_descent(x_train, y_train, iterations);
 
-	std::cout << "Cost: " << cost << std::endl;
+	LinearModel.print_model_params("Final w and b found by gradient descent: ");
+	
+	int i = 0;
+	double accuracy = 0.0;
+	double tolerance = 10.0;
+	int num_accurate_predictions = 0;
 
-	arma::rowvec x_vec = x_train.row(0);
+	std::cout << "\nTest against x_train: " << std::endl;
+	x_train.each_row([&](const arma::rowvec& row) {
+		double result = LinearModel.single_prediction(row);
+		double diff = std::abs(result - y_train[i]);
+		double deviation = (diff / y_train[i]) * 100.0;
 
-	double prediction = LinearModel.predict_single_output(x_vec);
+		if (deviation <= tolerance) {
+			num_accurate_predictions++;
+		}
 
-	std::cout << prediction << std::endl;
+		std::cout << std::setw(14) << "Prediction:" << std::setw(8) << result;
+		std::cout << std::setw(16) << "Target value:" << std::setw(4) << y_train[i++];
+		std::cout << std::setw(8) << "Diff:" << std::setw(8) << diff;
+		std::cout << std::setw(13) << "Deviation:" << std::setw(3) << "% " << deviation << std::endl;
+	});
+
+	double accuracy_percentage = static_cast<double>(num_accurate_predictions) / x_train.n_rows * 100.0;
+	std::cout << "Accurate predictions: " << num_accurate_predictions << std::endl;
+	std::cout << "Model accuracy: % " << accuracy_percentage << std::endl;
 
 	return 0;
 }
