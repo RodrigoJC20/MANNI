@@ -39,6 +39,9 @@ int main()
 	LinearModel.performFeatureScaling(x_train);
 	x_train.print("x_train feature scaled: ");
 
+	LinearModel.performFeatureScaling(y_train);
+	y_train.print("y_train feature scaled: ");
+
 	double cost = LinearModel.compte_cost(x_train, y_train);
 
 	std::cout << "Cost: " << cost << std::endl;
