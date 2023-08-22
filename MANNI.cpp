@@ -36,6 +36,9 @@ int main()
 
 	LinearRegression::Model LinearModel (w_init, b_init, learning_rate);
 
+	LinearModel.performFeatureScaling(x_train);
+	x_train.print("x_train feature scaled: ");
+
 	double cost = LinearModel.compte_cost(x_train, y_train);
 
 	std::cout << "Cost: " << cost << std::endl;

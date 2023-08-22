@@ -38,6 +38,27 @@ namespace LinearRegression {
 			return arma::dot(x, weights) + bias;
 		}
 
+		/*
+		* @brief Perform feature scaling (0,1) for every feature.
+		*/
+		void performFeatureScaling(arma::mat& x) {
+			for (size_t i = 0; i < x.n_cols; i++) {
+				//get max
+				double max = std::numeric_limits<double>::min();
+				double min = std::numeric_limits<double>::max();
+				for (size_t j = 0; j < x.n_rows; j++) {
+					max = std::max(x.at(j, i), max);
+					min = std::min(x.at(j, i), min);
+				}
+				//aply changes
+				//x.col(i) /= max;
+				for (size_t j = 0; j < x.n_rows; j++) {
+					//x.at(i, j) = (x.at(i, j) - min) / (max - min);
+					x.at(j, i) = x.at(j, i) / max;
+				}
+			}
+		}
+
 		double compte_cost(const arma::mat& x, const arma::vec& y) {
 			int m = x.n_rows; 
 			double cost = 0;
