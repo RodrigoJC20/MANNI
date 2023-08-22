@@ -39,6 +39,15 @@ int main()
 	double accuracy = 0.0;
 	double tolerance = 10.0;
 	int num_accurate_predictions = 0;
+	LinearRegression::Model LinearModel (w_init, b_init, learning_rate);
+
+	LinearModel.performFeatureScaling(x_train);
+	x_train.print("x_train feature scaled: ");
+
+	LinearModel.performFeatureScaling(y_train);
+	y_train.print("y_train feature scaled: ");
+
+	double cost = LinearModel.compte_cost(x_train, y_train);
 
 	std::cout << "\nTest against x_train: " << std::endl;
 	x_train.each_row([&](const arma::rowvec& row) {
