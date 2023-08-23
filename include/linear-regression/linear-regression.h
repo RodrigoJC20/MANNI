@@ -34,8 +34,10 @@ namespace LinearRegression {
 		* @brief Perform feature scaling (0,1) for every feature.
 		*/
 		void performFeatureScaling(arma::mat& x) {
-			double max_value = x.max();
-			x /= max_value;
+			x.each_col([&](arma::colvec& col) {
+				double max_value = col.max();
+				col /= max_value;
+			});
 		}
 
 		double compute_cost(const arma::mat& x, const arma::vec& y) {
