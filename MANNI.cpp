@@ -15,6 +15,13 @@ int main()
 	arma::vec y_train = input.col(input.n_cols - 1);
 	arma::mat x_train = input.head_cols(input.n_cols - 1);
 
+	std::vector<std::pair<double, double>> x_mu_sigma = LinearRegression::Model::z_score_normalization(x_train);
+
+	for (int i = 0; i < x_train.n_cols; i++) {
+		x_train.col(i) -= x_mu_sigma[i].first;
+		x_train.col(i) /= x_mu_sigma[i].second;
+	}
+	
 	//arma::vec w_init(x_train.n_cols, arma::fill::zeros);
 	//double b_init = 0;
 
@@ -59,12 +66,6 @@ int main()
 	double accuracy_percentage = static_cast<double>(num_accurate_predictions) / x_train.n_rows * 100.0;
 	std::cout << "Accurate predictions: " << num_accurate_predictions << std::endl;
 	std::cout << "Model accuracy: % " << accuracy_percentage << std::endl;
-
-	LinearModel.performFeatureScaling(x_train);
-	x_train.print("x_train feature scaled: ");
-
-	LinearModel.performFeatureScaling(y_train);
-	y_train.print("y_train feature scaled: ");
-
+	
 	return 0;
 }

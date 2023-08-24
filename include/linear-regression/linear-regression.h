@@ -40,6 +40,20 @@ namespace LinearRegression {
 			});
 		}
 
+		// Mean and standard deviation
+		static std::vector<std::pair<double, double>> z_score_normalization(arma::mat& x) {
+			std::vector<std::pair<double, double>> z_score (x.n_cols);
+
+			int i = 0;
+			x.each_col([&](const arma::colvec col) {
+				double mean = arma::mean(col);
+				double standard_deviation = arma::stddev(col);
+				z_score[i++] = { mean, standard_deviation };
+			});
+
+			return z_score;
+		}
+
 		double compute_cost(const arma::mat& x, const arma::vec& y) {
 			int m = x.n_rows; 
 			double cost = 0;
@@ -86,11 +100,7 @@ namespace LinearRegression {
 			if (!suppress_output) std::cout << "\n Computing Gradient Descent..." << std::endl;
 			int n = x.n_cols;
 
-			
-
 			for (size_t it = 0; it < iterations; it++) {
-				
-				
 				std::pair<arma::vec, double> gradient = compute_gradient(x, y);
 
 				gradient.first *= alpha;
