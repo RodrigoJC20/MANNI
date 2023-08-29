@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cmake4eclipse.mbs.config.debug.2097503701">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cmake4eclipse.mbs.config.debug.2097503701" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE64" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="cmake4eclipse.mbs.buildArtefactType.cmake" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=cmake4eclipse.mbs.buildArtefactType.cmake,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="cmake4eclipse.mbs.config.debug.2097503701" name="Debug" parent="cmake4eclipse.mbs.config.debug">
+					<folderInfo id="cmake4eclipse.mbs.config.debug.2097503701." name="/" resourcePath="">
+						<toolChain id="cmake4eclipse.mbs.config.debug.toolChain.105939463" name="CMake driven" superClass="cmake4eclipse.mbs.config.debug.toolChain">
+							<targetPlatform id="cmake4eclipse.mbs.targetPlatform.cmake.1407058048" name="Any Platform" superClass="cmake4eclipse.mbs.targetPlatform.cmake"/>
+							<builder buildPath="/MANNI/_build/Debug" id="cmake4eclipse.mbs.builder.1973971418" managedBuildOn="true" name="CMake Builder.Debug" superClass="cmake4eclipse.mbs.builder"/>
+							<tool id="cmake4eclipse.mbs.toolchain.tool.dummy.1999396028" name="CMake" superClass="cmake4eclipse.mbs.toolchain.tool.dummy"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="de.marw.cmake4eclipse.mbs.settings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cmake4eclipse.mbs.config.cmake.1759606784">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cmake4eclipse.mbs.config.cmake.1759606784" moduleId="org.eclipse.cdt.core.settings" name="Default">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE64" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="cmake4eclipse.mbs.buildArtefactType.cmake" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=cmake4eclipse.mbs.buildArtefactType.cmake" description="Default coming from cmake" id="cmake4eclipse.mbs.config.cmake.1759606784" name="Default" parent="cmake4eclipse.mbs.config.cmake">
+					<folderInfo id="cmake4eclipse.mbs.config.cmake.1759606784." name="/" resourcePath="">
+						<toolChain id="cmake4eclipse.mbs.config.cmake.toolChain.2074175744" name="CMake driven" superClass="cmake4eclipse.mbs.config.cmake.toolChain">
+							<targetPlatform id="cmake4eclipse.mbs.targetPlatform.cmake.1651578302" name="Any Platform" superClass="cmake4eclipse.mbs.targetPlatform.cmake"/>
+							<builder buildPath="/MANNI/_build/Default" id="cmake4eclipse.mbs.builder.150391778" managedBuildOn="true" name="CMake Builder.Default" superClass="cmake4eclipse.mbs.builder"/>
+							<tool id="cmake4eclipse.mbs.toolchain.tool.dummy.1542445914" name="CMake" superClass="cmake4eclipse.mbs.toolchain.tool.dummy"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="de.marw.cmake4eclipse.mbs.settings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cmake4eclipse.mbs.config.release.1497575184">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cmake4eclipse.mbs.config.release.1497575184" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE64" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="cmake4eclipse.mbs.buildArtefactType.cmake" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=cmake4eclipse.mbs.buildArtefactType.cmake,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" description="" id="cmake4eclipse.mbs.config.release.1497575184" name="Release" parent="cmake4eclipse.mbs.config.release">
+					<folderInfo id="cmake4eclipse.mbs.config.release.1497575184." name="/" resourcePath="">
+						<toolChain id="cmake4eclipse.mbs.config.release.toolChain.1991819648" name="CMake driven" superClass="cmake4eclipse.mbs.config.release.toolChain">
+							<targetPlatform id="cmake4eclipse.mbs.targetPlatform.cmake.884079184" name="Any Platform" superClass="cmake4eclipse.mbs.targetPlatform.cmake"/>
+							<builder buildPath="/MANNI/_build/Release" id="cmake4eclipse.mbs.builder.1272342454" managedBuildOn="true" name="CMake Builder.Release" superClass="cmake4eclipse.mbs.builder"/>
+							<tool id="cmake4eclipse.mbs.toolchain.tool.dummy.182606821" name="CMake" superClass="cmake4eclipse.mbs.toolchain.tool.dummy"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="de.marw.cmake4eclipse.mbs.settings"/>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="MANNI.cmake4eclipse.mbs.projectType.1227077431" name="Cmake4eclipse" projectType="cmake4eclipse.mbs.projectType"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="cmake4eclipse.mbs.config.debug.2097503701" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="cmake4eclipse.lsp.CompileCommandsJsonParser"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetector" ref="shared-provider"/>
+		</extension>
+	</configuration>
+	<configuration id="cmake4eclipse.mbs.config.cmake.1759606784" name="Default">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="cmake4eclipse.lsp.CompileCommandsJsonParser"/>
+		</extension>
+	</configuration>
+	<configuration id="cmake4eclipse.mbs.config.release.1497575184" name="Release">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="cmake4eclipse.lsp.CompileCommandsJsonParser"/>
+		</extension>
+	</configuration>
+</project>
