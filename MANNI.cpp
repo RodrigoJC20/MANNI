@@ -6,7 +6,7 @@
 int main()
 {
 	std::string filename = "MultipleLinearRegression.csv";
-	std::string file_path = "../../../examples/" + filename;
+	std::string file_path = "./examples/" + filename;
 
 	arma::mat input;
 
